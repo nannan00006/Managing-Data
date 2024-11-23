@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.OneHotEncoderModel","timestamp":1713049325642,"sparkVersion":"3.5.1","uid":"OneHotEncoder_a3dbc99e427e","paramMap":{"outputCols":["beer_style","sku"],"inputCols":["style_index","sku_index"]},"defaultParamMap":{"handleInvalid":"error","dropLast":true,"outputCol":"OneHotEncoder_a3dbc99e427e__output"}}

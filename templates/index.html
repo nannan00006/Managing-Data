@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brewery Prediction</title>
+    <link rel="stylesheet" href="/static/css/form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Brewery Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="input-group">
+                <label for="beer_style">Beer style:</label>
+                <select id="beer_style" name="beer_style">
+                    <option value="Porter">Porter</option>
+                    <option value="Sour">Sour</option>
+                    <option value="Lager">Lager</option>
+                    <option value="Wheat Beer">Wheat Beer</option>
+                    <option value="Pilsner">Pilsner</option>
+                    <option value="Ale">Ale</option>
+                    <option value="Stout">Stout</option>
+                    <option value="IPA">IPA</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="sku">Packaging type:</label>
+                <select id="sku" name="sku">
+                    <option value="Pints">Pints</option>
+                    <option value="Kegs">Kegs</option>
+                    <option value="Bottles">Bottles</option>
+                    <option value="Cans">Cans</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="fermentation">Fermentation time:</label>
+                <input type="text" id="fermentation" name="fermentation">
+            </div>
+            <div class="input-group">
+                <label for="temperature">Temperature:</label>
+                <input type="text" id="temperature" name="temperature">
+            </div>
+            <div class="input-group">
+                <label for="ph">PH level:</label>
+                <input type="text" id="ph" name="ph">
+            </div>
+            <div class="input-group">
+                <label for="gravity">Gravity:</label>
+                <input type="text" id="gravity" name="gravity">
+            </div>
+            <div class="input-group">
+                <label for="alcohol_content">Alcohol content:</label>
+                <input type="text" id="alcohol_content" name="alcohol_content">
+            </div>
+            <div class="input-group">
+                <label for="bitterness">Bitterness:</label>
+                <input type="text" id="bitterness" name="bitterness">
+            </div>
+            <div class="input-group">
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color">
+            </div>
+            <div class="input-group">
+                <label for="ingredient_ratio">Ingredients Ratio:</label>
+                <input type="text" id="ingredient_ratio" name="ingredient_ratio" placeholder="Enter ratio like 0.21:0.27">
+            </div>
+            <div class="input-group">
+                <label for="volume_produced">Volume produced:</label>
+                <input type="text" id="volume_produced" name="volume_produced">
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction is defined %}
+            <div class="prediction-result">
+                <p>Quality score: {{ prediction[0] }}</p>
+                <p>Total sales forecast: {{ prediction[1] }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
